@@ -6,6 +6,7 @@ from lib.extract.data_extractor import extract_data
 from lib.tracking_decorator import TrackingDecorator
 from lib.transform.data_copier import copy_data
 from lib.transform.data_csv_converter import convert_data_to_csv
+from lib.transform.data_geocoder import geocode_location
 
 file_path = os.path.realpath(__file__)
 script_path = os.path.dirname(file_path)
@@ -51,6 +52,7 @@ def main(argv):
 
     copy_data(source_path=raw_path, results_path=workspace_path, clean=clean, quiet=quiet)
     convert_data_to_csv(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
+    geocode_location(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
 
 
 if __name__ == "__main__":
