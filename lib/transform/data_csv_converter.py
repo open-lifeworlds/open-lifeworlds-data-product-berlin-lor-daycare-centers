@@ -15,7 +15,7 @@ def convert_data_to_csv(source_path, results_path, clean=False, quiet=False):
         subdir = subdir.replace(f"{source_path}/", "")
         os.makedirs(os.path.join(results_path, subdir), exist_ok=True)
 
-        for file_name in sorted(files):
+        for file_name in [file_name for file_name in sorted(files) if file_name.endswith("-details.xlsx")]:
             source_file_path = os.path.join(source_path, subdir, file_name)
             convert_file_to_csv(source_file_path, clean=clean, quiet=quiet)
 

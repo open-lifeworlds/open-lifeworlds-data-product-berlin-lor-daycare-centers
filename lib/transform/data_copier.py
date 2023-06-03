@@ -30,9 +30,9 @@ def copy_data(source_path, results_path, clean=False, quiet=False):
 
 
 def get_results_file_name(subdir, source_file_name):
-    timestamp = datetime.now().strftime("%Y-%m-%d")
+    timestamp = datetime.now().strftime("%Y-%m")
 
     if source_file_name == "kitaliste_aktuell.xlsx":
-        return f"berlin-lor-daycare-centers-{timestamp}.xlsx"
+        return f"berlin-lor-daycare-centers-{timestamp}-details.xlsx"
     else:
         return source_file_name

@@ -21,28 +21,31 @@ def assign_lor_area(source_path, results_path, clean=False, quiet=False):
         subdir = subdir.replace(f"{source_path}/", "")
         os.makedirs(os.path.join(results_path, subdir), exist_ok=True)
 
-        for file_name in [file_name for file_name in sorted(files) if file_name.endswith(".csv")]:
+        for file_name in [file_name for file_name in sorted(files) if file_name.endswith("-details.csv")]:
             source_file_path = os.path.join(source_path, subdir, file_name)
             assign_lor_area_id(source_file_path, geojson=geojson, clean=clean, quiet=quiet)
 
 
 def assign_lor_area_id(source_file_path, geojson, clean, quiet):
     dataframe = read_csv_file(source_file_path)
-    dataframe = dataframe.assign(
-        planning_area_id=lambda df: df.apply(lambda row: build_planning_area_id(
-            row["lat"], row["lon"], geojson), axis=1))
 
-    dataframe_errors = dataframe["planning_area_id"].isnull().sum()
+    if "planning_area_id" not in dataframe.columns:
+        dataframe = dataframe.assign(
+            planning_area_id=lambda df: df.apply(lambda row: build_planning_area_id(
+                row["lat"], row["lon"], geojson), axis=1))
+        dataframe_errors = dataframe["planning_area_id"].isnull().sum()
 
-    # Write csv file
-    if dataframe.shape[0] > 0:
-        dataframe.to_csv(source_file_path, index=False)
-    if not quiet:
-        print(f"✓ Assign LOR area IDs to {os.path.basename(source_file_path)} with {dataframe_errors} errors")
-    else:
+        # Write csv file
+        if dataframe.shape[0] > 0:
+            dataframe.to_csv(source_file_path, index=False)
         if not quiet:
-            print(dataframe.head())
-            print(f"✗️ Empty {os.path.basename(source_file_path)}")
+            print(f"✓ Assign LOR area IDs to {os.path.basename(source_file_path)} with {dataframe_errors} errors")
+        else:
+            if not quiet:
+                print(dataframe.head())
+                print(f"✗️ Empty {os.path.basename(source_file_path)}")
+    else:
+        print(f"✓ Already assigned LOR area IDs to {os.path.basename(source_file_path)}")
 
 
 def build_planning_area_id(lat, lon, geojson):
