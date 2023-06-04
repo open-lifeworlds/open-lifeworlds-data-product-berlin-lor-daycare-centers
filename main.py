@@ -3,6 +3,7 @@ import os
 import sys
 
 from lib.extract.data_extractor import extract_data
+from lib.load.data_loader import load_data
 from lib.tracking_decorator import TrackingDecorator
 from lib.transform.data_blender import blend_data
 from lib.transform.data_copier import copy_data
@@ -42,6 +43,7 @@ def main(argv):
     manifest_path = os.path.join(script_path, "data-product.yml")
     raw_path = os.path.join(script_path, "raw")
     workspace_path = os.path.join(script_path, "workspace")
+    data_path = os.path.join(script_path, "data")
 
     #
     # Extract
@@ -60,6 +62,12 @@ def main(argv):
 
     summarize(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
     blend_data(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
+
+    #
+    # Load
+    #
+
+    load_data(source_path=workspace_path, results_path=data_path, clean=clean, quiet=quiet)
 
 
 if __name__ == "__main__":

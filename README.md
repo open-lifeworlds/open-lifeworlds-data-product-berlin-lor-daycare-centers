@@ -52,7 +52,10 @@ See the [open issues](https://github.com/open-lifeworlds/open-lifeworlds-data-pr
 
 ## License
 
-Distributed under the GPLv3 License. See [LICENSE.md](./LICENSE.md) for more information.
+Source data distributed under [CC-BY-3.0-Namensnennung](https://creativecommons.org/licenses/by/3.0/de/) by [Senatsverwaltung für Bildung, Jugend und Familie Berlin](https://www.berlin.de/sen/bildung/service/daten/).
+
+Data product distributed under the [CC-BY 4.0 License](https://creativecommons.org/licenses/by/4.0/). See [LICENSE.md](./LICENSE.md) for more information.
+
 
 ## Contact
 
