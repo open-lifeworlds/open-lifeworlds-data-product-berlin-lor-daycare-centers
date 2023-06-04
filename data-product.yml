@@ -30,6 +30,15 @@ input_ports:
       updated: 2022-08-31
     files:
       - https://www.berlin.de/sen/jugend/traegerservice/kitaliste_aktuell.xlsx
+  - id: berlin-lor-population-statistics
+    metadata:
+      name: Berlin LOR population statistics
+      author: Open Lifeworlds
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-population/tree/main/data
+      license: CC-BY-4.0
+      updated: 2023-07-25
+    files:
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-population/main/data/berlin-lor-population-statistics/berlin-lor-population-statistics.json
 output_ports:
 metrics:
   - quality:

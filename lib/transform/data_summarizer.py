@@ -34,8 +34,10 @@ def summarize_csv_file(source_file_path, geojson, clean, quiet):
         dataframe = dataframe_details.groupby("planning_area_id").agg(
             daycare_centers=("planning_area_id", "size"),
             places=("places", "sum")
-        ).reset_index().sort_values(by="planning_area_id") \
-            .assign(planning_area_id=lambda df: df["planning_area_id"].astype(int))
+        ).reset_index() \
+            .sort_values(by="planning_area_id") \
+            .rename(columns={"planning_area_id": "id"}) \
+            .assign(id=lambda df: df["id"].astype(int).astype(str).str.zfill(8))
 
         # Write csv file
         if dataframe.shape[0] > 0:
