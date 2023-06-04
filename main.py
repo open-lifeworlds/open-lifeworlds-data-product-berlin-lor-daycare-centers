@@ -10,7 +10,7 @@ from lib.transform.data_copier import copy_data
 from lib.transform.data_csv_converter import convert_data_to_csv
 from lib.transform.data_geocoder import geocode_location
 from lib.transform.data_lor_area_assigner import assign_lor_area
-from lib.transform.data_summarizer import summarize
+from lib.transform.data_aggregator import aggregate
 
 file_path = os.path.realpath(__file__)
 script_path = os.path.dirname(file_path)
@@ -60,7 +60,7 @@ def main(argv):
     geocode_location(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
     assign_lor_area(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
 
-    summarize(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
+    aggregate(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
     blend_data(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
 
     #

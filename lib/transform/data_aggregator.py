@@ -7,11 +7,7 @@ from lib.tracking_decorator import TrackingDecorator
 
 
 @TrackingDecorator.track_time
-def summarize(source_path, results_path, clean=False, quiet=False):
-    # Load geojson
-    geojson = read_geojson_file(
-        os.path.join(source_path, "berlin-lor-geodata", f"berlin-lor-planning-areas-from-2021.geojson"))
-
+def aggregate(source_path, results_path, clean=False, quiet=False):
     # Iterate over files
     for subdir, dirs, files in sorted(os.walk(source_path)):
 
@@ -21,10 +17,10 @@ def summarize(source_path, results_path, clean=False, quiet=False):
 
         for file_name in [file_name for file_name in sorted(files) if file_name.endswith("-details.csv")]:
             source_file_path = os.path.join(source_path, subdir, file_name)
-            summarize_csv_file(source_file_path, geojson=geojson, clean=clean, quiet=quiet)
+            aggregate_csv_file(source_file_path, clean=clean, quiet=quiet)
 
 
-def summarize_csv_file(source_file_path, geojson, clean, quiet):
+def aggregate_csv_file(source_file_path, clean, quiet):
     source_file_name, source_file_extension = os.path.splitext(source_file_path)
     target_file_path = f"{source_file_name.replace('-details', '')}{source_file_extension}"
 
