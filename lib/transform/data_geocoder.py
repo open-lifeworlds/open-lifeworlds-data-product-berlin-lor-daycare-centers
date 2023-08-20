@@ -29,7 +29,7 @@ def geocode_csv(source_file_path, clean, quiet):
     if "geometry" not in dataframe.columns and "lat" not in dataframe.columns and "lon" not in dataframe.columns:
         dataframe = dataframe \
             .assign(combined_address=lambda df: df["street"].apply(lambda row: row + " ") + df["zip_code"].apply(
-            lambda row: str(row) + " Berlin"))
+            lambda row: str(int(row)) + " Berlin"))
 
         # Initialize list for geo information
         dataframe_geo_list = []

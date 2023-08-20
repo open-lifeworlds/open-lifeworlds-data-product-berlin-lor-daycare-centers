@@ -16,7 +16,7 @@ def copy_data(source_path, results_path, clean=False, quiet=False):
             results_file_name = get_results_file_name(subdir, source_file_name)
 
             # Make results path
-            os.makedirs(os.path.join(results_path, subdir), exist_ok=True)
+            os.makedirs(os.path.join(results_path, subdir + (f"-{timestamp}" if "daycare-centers" in subdir else "")), exist_ok=True)
 
             source_file_path = os.path.join(source_path, subdir, source_file_name)
             results_file_path = os.path.join(results_path,
