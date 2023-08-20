@@ -169,10 +169,10 @@ def calculate_averages(year, half_year, year_population, geojson, csv_statistics
         values |= {f"{property_name}_per_sqkm": round(float(total / total_sqkm), 2) for property_name, total in
                    values.items()}
     if total_inhabitants is not None:
-        values |= {f"{property_name}_per_inhabitant": round(float(total / total_inhabitants * 100), 2) for
+        values |= {f"{property_name}_per_inhabitant": round(float(total / total_inhabitants), 2) for
                    property_name, total in values.items()}
     if total_inhabitants_age_below_6 is not None:
-        values |= {f"{property_name}_per_inhabitant_age_below_6": round(float(total / total_inhabitants_age_below_6 * 100), 2) for
+        values |= {f"{property_name}_per_inhabitant_age_below_6": round(float(total / total_inhabitants_age_below_6), 2) for
                    property_name, total in values.items()}
 
     json_statistics[year][half_year][0] = values
@@ -197,7 +197,7 @@ def add_property_with_modifiers(feature, statistics, property_name, total_area_s
             if inhabitants is not None:
                 feature["properties"][f"{property_name}_per_inhabitant"] = round(
                     float(statistics[property_name].sum()) / inhabitants, 2)
-            if inhabitants is not None:
+            if inhabitants_age_below_6 is not None:
                 feature["properties"][f"{property_name}_per_inhabitant_age_below_6"] = round(
                     float(statistics[property_name].sum()) / inhabitants_age_below_6, 2)
         except ValueError:
