@@ -61,6 +61,7 @@ output_ports:
       license: CC-BY-4.0
       updated: 2023-10-28
     files:
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2013-10/berlin-lor-daycare-centers-2013-10-details.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2013-10/berlin-lor-daycare-centers-2013-10-district-regions.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2013-10/berlin-lor-daycare-centers-2013-10-districts.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2013-10/berlin-lor-daycare-centers-2013-10-forecast-areas.geojson
