@@ -250,11 +250,11 @@ def get_total_sqkm(geojson):
 
 
 def get_total_inhabitants(year, json_statistics_population):
-    return json_statistics_population[year]["02"]["total"]["inhabitants"]
+    return json_statistics_population[year]["02"]["0"]["inhabitants"]
 
 
 def get_total_inhabitants_age_below_6(year, json_statistics_population):
-    return json_statistics_population[year]["02"]["total"]["inhabitants_age_below_6"]
+    return json_statistics_population[year]["02"]["0"]["inhabitants_age_below_6"]
 
 
 def read_csv_file(file_path):

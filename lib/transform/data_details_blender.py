@@ -35,7 +35,7 @@ def blend_details_into_geojson(source_file_path, clean, quiet):
         "features": []
     }
 
-    if not os.path.exists(target_file_path):
+    if clean or not os.path.exists(target_file_path):
         dataframe_details = read_csv_file(source_file_path)
 
         for _, detail in dataframe_details.iterrows():
@@ -58,7 +58,8 @@ def blend_details_into_geojson(source_file_path, clean, quiet):
                     "sponsor-name": detail["sponsor_name"],
                     "sponsor-type": detail["sponsor_type"],
                     "lat": float(detail["lat"]),
-                    "lon": float(detail["lon"])
+                    "lon": float(detail["lon"]),
+                    "planning-area-id": int(detail["planning_area_id"])
                 }
             })
 
