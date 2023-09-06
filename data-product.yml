@@ -45,7 +45,7 @@ input_ports:
 output_ports:
   - id: berlin-lor-daycare-centers-csv
     metadata:
-      name: Berlin LOR health and structural atlas csv
+      name: Berlin LOR daycare centers csv
       author: Open Lifeworlds
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data
       license: CC-BY-4.0
@@ -55,7 +55,7 @@ output_ports:
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-00/berlin-lor-daycare-centers-2023-10-details.csv
   - id: berlin-lor-daycare-centers-geojson
     metadata:
-      name: Berlin LOR health and structural atlas geojson
+      name: Berlin LOR daycare centers geojson
       author: Open Lifeworlds
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data
       license: CC-BY-4.0
@@ -66,6 +66,16 @@ output_ports:
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-forecast-areas.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-planning-areas.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-details.geojson
+  - id: berlin-lor-daycare-centers-styles
+    metadata:
+      name: Berlin LOR daycare centers styles
+      author: Open Lifeworlds
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data
+      license: CC-BY-4.0
+      updated: 2023-10-28
+    files:
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-styles/berlin-lor-daycare-centers-symbol-theme-light.json
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-styles/berlin-lor-daycare-centers-symbol-theme-dark.json
   - id: berlin-lor-daycare-centers-statistics
     metadata:
       name: Berlin LOR daycare centers statistics
