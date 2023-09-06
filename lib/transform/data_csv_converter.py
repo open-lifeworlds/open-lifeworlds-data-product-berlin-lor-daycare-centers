@@ -144,7 +144,7 @@ def convert_file_to_csv(source_file_path, clean=False, quiet=False):
                 .assign(sponsor_name=lambda df: df["sponsor_name"].apply(lambda row: row.replace('"', ''))) \
                 .assign(phone_number=lambda df: df["phone_number"]
                         .apply(lambda row: f"+4930{row.replace(' ', '').replace('/', '').lstrip('030')}" if len(
-                row.replace("-", "")) > 0 else None))
+                row.replace("-", "")) > 0 else ""))
 
             # Write csv file
             if dataframe.shape[0] > 0:

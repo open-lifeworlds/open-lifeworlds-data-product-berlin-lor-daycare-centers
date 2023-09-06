@@ -1091,7 +1091,7 @@ id,name,phone_number,places,type,sponsor_id,sponsor_name,sponsor_type,street,zip
 4071190,Kita Theo-Tintenklecks,+493054469766,36,Eltern-Initiativ-Kindertagesstätte,557,CIP City-Initiative f. Eltern- und Kinder-Projekte gGmbH,EKT,Mierendorffstraße 21,10589,Berlin,52.5238536,13.302174,04300517
 4071200,Kita Schlüterstraße,+493019988930,145,Kindertagesstätte,124,Kindertagesstätten Nordwest Eigenbetrieb von Berlin,Eigenbetrieb,Schlüterstraße 25,10629,Berlin,52.5048283,13.3170431,04501041
 4071240,Kindergarten am Schloß Charlottenburg,+4930427060,50,Eltern-Initiativ-Kindertagesstätte,723,Kindergarten am Schloß Charlottenburg e.V.,EKT,Eosanderstraße 13,10587,Berlin,52.5204789,13.3016925,04300619
-4071260,Kindertagesstätte Pumuckel,+49308721,15,Kindertagesstätte,910,Kindertagesstätte Pumuckel e.V.,Sonstiger freier Träger,,,,,,
+4071260,Kindertagesstätte Pumuckel,+49308721,15,Kindertagesstätte,910,Kindertagesstätte Pumuckel e.V.,Sonstiger freier Träger,Witzlebenstraße 37,14057,Berlin,52.509866,13.295233,04300416
 4071290,Kita an der TU Berlin,+493093939-8450,120,Kindertagesstätte,1256,studierendenWERK BERLIN,Sonstiger freier Träger,Marchstraße 8,10587,Berlin,52.5146307,13.3252488,04300622
 4071300,Kindergarten am Schloß Charlottenburg,+4930427060,22,Eltern-Initiativ-Kindertagesstätte,723,Kindergarten am Schloß Charlottenburg e.V.,EKT,Lohmeyerstraße 21,10587,Berlin,52.5200855,13.3017446,04300619
 4071310,Kita Warburgzeile,+493043571690,135,Kindertagesstätte,124,Kindertagesstätten Nordwest Eigenbetrieb von Berlin,Eigenbetrieb,Warburgzeile 8,10587,Berlin,52.5171904,13.3114225,04300619
@@ -1778,7 +1778,7 @@ id,name,phone_number,places,type,sponsor_id,sponsor_name,sponsor_type,street,zip
 7112000,Krippe Holsteinische Straße,+4930859951760,30,Kindertagesstätte,1249,Nachbarschaftsheim Schöneberg e.V.,Sonstiger freier Träger,Holsteinische Straße 30,12161,Berlin,52.46642035,13.334542576853572,07300618
 7112010,Kita Little Wombat,+493078955195,25,Kindertagesstätte,7869,kids in berlin kib gUG (haftungsbeschränkt),Sonstiger freier Träger,Naumannstraße 6,10829,Berlin,52.4857627,13.3633572,07200414
 7112020,Kita Ebersstraße,+493078895750,15,Kindertagesstätte,1249,Nachbarschaftsheim Schöneberg e.V.,Sonstiger freier Träger,Ebersstraße 68,10827,Berlin,52.47931,13.3503011,07200308
-7112030,Kita Tulpen,+49307885554,20,Kindertagesstätte,972,SHP für Bildung gGmbH,Sonstiger freier Träger,,,,,,
+7112030,Kita Tulpen,+49307885554,20,Kindertagesstätte,972,SHP für Bildung gGmbH,Sonstiger freier Träger,Naumannstraße 7,10829,Berlin,52.4854946,13.3636307,07200414
 7112060,Kinderladen Friedenauer Spatzen,+493089742170,25,Kindertagesstätte,636,Frecher Spatz e.V.,EKT,Sponholzstraße 51,12159,Berlin,52.47439,13.340787,07300618
 7112080,Kindergarten der Johannes-Schule Berlin,+49307009411-0,65,Kindertagesstätte,8159,Waldorf-Südwest gemeinnützige GmbH,Sonstiger freier Träger,Monumentenstraße 13,10829,Berlin,52.48758135,13.36918219560485,07200414
 7112100,Kinderladen Zauberhaus,+493017631483285,36,Kindertagesstätte,8313,Kinderladen Zauberhaus UG (haftungsbeschränkt),Sonstiger freier Träger,Geisbergstraße 28,10777,Berlin,52.4976245,13.33816,07100101
@@ -2114,7 +2114,7 @@ id,name,phone_number,places,type,sponsor_id,sponsor_name,sponsor_type,street,zip
 8142870,Kita Kinderparadies Rixdorf,+493081492457,25,Kindertagesstätte,8476,IBEB Initiative für Bildung und Erziehung Berlin gemeinnützige GmbH,Sonstiger freier Träger,Böhmische Straße 27,12055,Berlin,52.4762581,13.4473151,08100415
 8142880,Kita Sonnenkäferhaus Reuterstraße,+4930-62985880,20,Kindertagesstätte,7357,Sonnenkäferhaus gGmbH,Sonstiger freier Träger,Reuterstraße 37,12047,Berlin,52.4905944,13.4292483,08100311
 8142890,Kita Piratennest,+493040082,25,Kindertagesstätte,8190,LebensTraum Kinder UG (haftungsbeschränkt),Sonstiger freier Träger,Neuköllner Straße 226,12357,Berlin,52.4278642,13.47957363363931,08401241
-8142900,Kleiner Fratz,+49307483082,25,Kindertagesstätte,627,Kleiner Fratz GmbH,Sonstiger freier Träger,,,,,,
+8142900,Kleiner Fratz,+49307483082,25,Kindertagesstätte,627,Kleiner Fratz GmbH,Sonstiger freier Träger,Bruno-Bauer-Straße 22,12051,Berlin,52.4662812,13.4385724,08100209
 8143000,Kita Lipschitzallee,+493060258284,99,Kindertagesstätte,8214,Malteser Hilfsdienst gGmbH,Sonstiger freier Träger,Lipschitzallee 72,12353,Berlin,52.4248325,13.4630587,08300935
 8143010,Matschmonster,+493085621555,25,Eltern-Initiativ-Kindertagesstätte,8217,Matschmonster e.V.,Sonstiger freier Träger,Britzer Damm 101,12347,Berlin,52.4538336,13.4383954,08200623
 8143020,Kita Timbales,+49301797647685,22,Kindertagesstätte,8226,Timbales e. V.,Sonstiger freier Träger,Kienitzer Straße 99,12049,Berlin,52.4758273,13.4255629,08100103

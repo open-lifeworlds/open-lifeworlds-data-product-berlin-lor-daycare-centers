@@ -52,7 +52,7 @@ def blend_details_into_geojson(source_file_path, clean, quiet):
                     "street": detail["street"],
                     "zip-code": detail["zip_code"],
                     "city": detail["city"],
-                    "phone-number": detail["phone_number"],
+                    "phone-number": detail["phone_number"] if detail["phone_number"] is not None else "",
                     "places": int(detail["places"]),
                     "sponsor-id": detail["sponsor_id"],
                     "sponsor-name": detail["sponsor_name"],
