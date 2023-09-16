@@ -1,4 +1,5 @@
 import os
+import re
 
 import pandas as pd
 from geopandas.tools import geocode
@@ -8,7 +9,7 @@ from lib.tracking_decorator import TrackingDecorator
 
 
 @TrackingDecorator.track_time
-def geocode_location(source_path, results_path, clean=False, quiet=False):
+def geocode_location(source_path, results_path, data_path, clean=False, quiet=False):
     # Iterate over files
     for subdir, dirs, files in sorted(os.walk(source_path)):
 
@@ -18,12 +19,14 @@ def geocode_location(source_path, results_path, clean=False, quiet=False):
 
         for file_name in [file_name for file_name in sorted(files) if file_name.endswith("-details.csv")]:
             source_file_path = os.path.join(source_path, subdir, file_name)
-            geocode_csv(source_file_path, clean=clean, quiet=quiet)
+            geocode_cache_file_path = os.path.join(data_path, "geocoding-cache.csv")
+
+            geocode_csv(source_file_path, geocode_cache_file_path, clean=clean, quiet=quiet)
             extend_latlon(source_file_path, clean=clean, quiet=quiet)
             extend_address(source_file_path, clean=clean, quiet=quiet)
 
 
-def geocode_csv(source_file_path, clean, quiet):
+def geocode_csv(source_file_path, geocode_cache_file_path, clean, quiet):
     dataframe = read_csv_file(source_file_path)
 
     if "geometry" not in dataframe.columns and "lat" not in dataframe.columns and "lon" not in dataframe.columns:
@@ -34,23 +37,58 @@ def geocode_csv(source_file_path, clean, quiet):
         # Initialize list for geo information
         dataframe_geo_list = []
 
+        # Read geocoding cache
+        if os.path.exists(geocode_cache_file_path):
+            geocoding_cache = read_csv_file(geocode_cache_file_path)
+            geocoding_cache.set_index("combined_address", inplace=True)
+        else:
+            geocoding_cache = pd.DataFrame(columns=["combined_address", "geometry", "address"])
+            geocoding_cache.set_index("combined_address", inplace=True)
+            
+        geocode_statistics = {
+            "from_cache": 0,
+            "new_geocoding": 0,
+        }
+
         # Iterate over dataframe
         for index, row in tqdm(dataframe.iterrows(), desc="Geocode addresses", unit="facility",
                                total=dataframe.shape[0]):
-            row_dataframe = pd.DataFrame(row).T
-            row_dataframe_geo = geocode(row_dataframe["combined_address"], provider="nominatim",
-                                        user_agent="open-lifeworlds", timeout=4)
-            dataframe_geo_list.append(row_dataframe_geo)
+
+            geocoding_cache_index = row["combined_address"]
+
+            # Check if address is already in cache
+            if geocoding_cache_index in geocoding_cache.index:
+                geocode_statistics["from_cache"] += 1
+
+                # Read from geolocation cache
+                row_dataframe_geo = pd.DataFrame(geocoding_cache.loc[geocoding_cache_index]).T
+                dataframe_geo_list.append(row_dataframe_geo)
+            else:
+                geocode_statistics["new_geocoding"] += 1
+
+                row_dataframe_geo = geocode(pd.DataFrame(row).T["combined_address"], user_agent="open-lifeworlds",
+                                            timeout=4)
+                dataframe_geo_list.append(row_dataframe_geo)
+
+                # Store result in cache
+                geocoding_cache.loc[geocoding_cache_index] = {
+                    "geometry": row_dataframe_geo.iloc[0]["geometry"],
+                    "address": row_dataframe_geo.iloc[0]["address"]
+                }
+                geocoding_cache.to_csv(geocode_cache_file_path, index=True)
+
+        print(f"✓ Read geolocation from cache {geocode_statistics['from_cache']} / new geocoding {geocode_statistics['new_geocoding']}")
 
         dataframe_geo = pd.concat(dataframe_geo_list)
+        dataframe_geo.reset_index(drop=True, inplace=True)
         dataframe = dataframe.join(dataframe_geo)
         dataframe_errors = dataframe["address"].isna().sum()
 
         # Write csv file
         if dataframe.shape[0] > 0:
             dataframe.to_csv(source_file_path, index=False)
-        if not quiet:
-            print(f"✓ Geocode {os.path.basename(source_file_path)} with {dataframe_errors} errors")
+            if not quiet:
+                print(f"✓ Geocode {os.path.basename(source_file_path)} with {dataframe_errors} errors")
         else:
             if not quiet:
                 print(dataframe.head())
@@ -139,7 +177,7 @@ def build_zip_code(row):
         return None
 
     elements = [item.strip() for item in row.split(",")]
-    return elements[-2].strip() if len(elements) >= 2 else None
+    return next((value for value in reversed(elements) if re.compile(r"\b\d{5}\b").search(str(value))), None)
 
 
 def build_city(row):
@@ -147,7 +185,7 @@ def build_city(row):
         return None
 
     elements = [item.strip() for item in row.split(",")]
-    return elements[-3].strip() if len(elements) >= 3 else None
+    return elements[-2].strip() if len(elements) >= 2 else None
 
 
 def read_csv_file(file_path):
