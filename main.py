@@ -59,7 +59,7 @@ def main(argv):
     copy_data(source_path=raw_path, results_path=workspace_path, clean=clean, quiet=quiet)
     convert_data_to_csv(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
     geocode_location(source_path=workspace_path, results_path=workspace_path, data_path=data_path, clean=clean, quiet=quiet)
-    assign_lor_area(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
+    assign_lor_area(source_path=workspace_path, results_path=workspace_path, data_path=data_path, clean=clean, quiet=quiet)
 
     aggregate(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
     blend_data(source_path=workspace_path, results_path=workspace_path, clean=clean, quiet=quiet)
