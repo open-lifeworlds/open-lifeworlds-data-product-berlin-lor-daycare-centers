@@ -49,23 +49,30 @@ output_ports:
       author: Open Lifeworlds
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data
       license: CC-BY-4.0
-      updated: 2023-10-23
+      updated: 2023-11-30
     files:
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10.csv
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-details.csv
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11.csv
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11-details.csv
   - id: berlin-lor-daycare-centers-geojson
     metadata:
       name: Berlin LOR daycare centers geojson
       author: Open Lifeworlds
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data
       license: CC-BY-4.0
-      updated: 2023-10-28
+      updated: 2023-11-30
     files:
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-district-regions.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-districts.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-forecast-areas.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-planning-areas.geojson
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-details.geojson
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11-district-regions.geojson
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11-districts.geojson
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11-forecast-areas.geojson
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11-planning-areas.geojson
+      - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-11/berlin-lor-daycare-centers-2023-11-details.geojson
   - id: berlin-lor-daycare-centers-styles
     metadata:
       name: Berlin LOR daycare centers styles
@@ -82,7 +89,7 @@ output_ports:
       author: Open Lifeworlds
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers-statistics/tree/main/data
       license: CC-BY-4.0
-      updated: 2023-10-28
+      updated: 2023-11-30
     files:
       - https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-statistics/berlin-lor-daycare-centers-statistics.json
 metrics:

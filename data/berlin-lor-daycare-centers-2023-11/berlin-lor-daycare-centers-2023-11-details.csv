@@ -1,0 +1,11 @@
+id,name,phone_number,places,type,sponsor_id,sponsor_name,sponsor_type,lat,lon,street,zip_code,city,planning_area_id
+1010020,Kita Kinderwelt,49302291378,155,Kindertagesstätte,1334,Forum Soziale Dienste GmbH,Sonstiger freier Träger,52.5117497,13.3821185,An der Kolonnade 3,10117,Berlin,01100205
+1010030,FRÖBEL Kindergarten Casa Fantasia,493048495184,69,Kindertagesstätte,1227,Fröbel Bildung und Erziehung gGmbH,Sonstiger freier Träger,52.5353154,13.399298326674506,Anklamer Straße 38,10115,Berlin,01100416
+1010080,Kita Regenbogen,49304493238,91,Kindertagesstätte,1202,Pfefferwerk Stadtkultur gGmbH,Sonstiger freier Träger,52.532131,13.404899890866746,Fehrbelliner Straße 80,10119,Berlin,01100416
+1010100,FRÖBEL Kindergarten Schatzinsel,49302013788,234,Kindertagesstätte,1227,Fröbel Bildung und Erziehung gGmbH,Sonstiger freier Träger,52.5123463,13.4055478,Fischerinsel 8,10179,Berlin,01100312
+1010110,Kita Französische Straße 16a u. 16b,49302089214,180,Kindertagesstätte,1318,Kinder im Kiez gGmbH,Sonstiger freier Träger,52.5145727,13.3881437,Französische Straße 16,10117,Berlin,01100206
+1010120,Kinderladen Die Humbolde,4930209346651,25,Kindertagesstätte,102,Humboldt Universität zu Berlin,Betriebskita,52.5154125,13.379618031158628,Pariser Platz 4,10117,Berlin,01100205
+1010130,Kita Pelikan,49302824385,190,Kindertagesstätte,1339,Kinder- und Jugend der Volkssolidarität Berlin gGmbH,Sonstiger freier Träger,52.5251897,13.3872109,Friedrichstraße 129,10117,Berlin,01100308
+1010150,Kita Gartenstraße 107,49302828337,140,Kindertagesstätte,120,Kindergärten City,Eigenbetrieb,52.52937455,13.39162961909171,Gartenstraße 107,10115,Berlin,01100415
+1010170,Kita Kinderakademie,49302824496,150,Kindertagesstätte,1224,GFJ - gemeinnützige Gesellschaft für Familien- und Jugendhilfe mbH,Sonstiger freier Träger,52.5311528,13.3752043,Habersaathstraße 13,10115,Berlin,01100308
+1010180,Lichtenberger Straße 32,49302492179,190,Kindertagesstätte,120,Kindergärten City,Eigenbetrieb,52.5149252,13.423468627169726,Lichtenberger Straße 32/33,10179,Berlin,01100311
