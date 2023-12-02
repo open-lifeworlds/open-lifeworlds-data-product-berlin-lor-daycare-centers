@@ -82,7 +82,8 @@ def convert_file_to_csv(source_file_path, clean=False, quiet=False):
                                .replace(" /Nachbarschaftshs Urbanstraße", " (Nachbarschaftshaus Urbanstraße)")
                                .replace("FRÖBEL - Kindergarten", "FRÖBEL-Kindergarten")
                                .replace("Kinder- u.Jugendzentrum", "Kinder- und Jugendzentrum")
-                               .replace("Gesellschaft f.intern.Kultur- u.Bildungsarbeit", "Gesellschaft Für Internationale Kultur- Und Bildungsarbeit E.v")
+                               .replace("Gesellschaft f.intern.Kultur- u.Bildungsarbeit",
+                                        "Gesellschaft Für Internationale Kultur- Und Bildungsarbeit E.v")
                                .replace("Colbestraße9 - 13", "Colbestraße 9")
                                )) \
                 .assign(name=lambda df: df["name"].apply(lambda row: re.sub(r"\"", "", row))) \
@@ -143,7 +144,8 @@ def convert_file_to_csv(source_file_path, clean=False, quiet=False):
                 .assign(street=lambda df: df["street"].apply(lambda row: re.sub(r"-\d+", "", row))) \
                 .assign(sponsor_name=lambda df: df["sponsor_name"].apply(lambda row: row.replace('"', ''))) \
                 .assign(phone_number=lambda df: df["phone_number"]
-                        .apply(lambda row: f"+4930{row.replace(' ', '').replace('/', '').lstrip('030')}" if len(
+                        .apply(lambda
+                                   row: f"+4930{row.replace(' ', '').replace('/', '').replace('-', '').lstrip('‭').rstrip('‬').lstrip('030').lstrip('(030)')}" if len(
                 row.replace("-", "")) > 0 else ""))
 
             # Write csv file
