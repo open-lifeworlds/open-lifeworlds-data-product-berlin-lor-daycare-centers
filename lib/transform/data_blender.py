@@ -16,6 +16,7 @@ statistic_properties = [
 statistics = [
     f"{key_figure_group}-2023-10",
     f"{key_figure_group}-2023-11",
+    f"{key_figure_group}-2023-12",
 ]
 
 

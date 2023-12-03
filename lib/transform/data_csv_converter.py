@@ -39,7 +39,11 @@ def convert_file_to_csv(source_file_path, clean=False, quiet=False):
         # day = os.path.basename(source_file_name).split(sep="-")[6]
 
         try:
-            sheet = "Sheet1"
+            if source_file_path.endswith("-2023-10-details.xlsx") or source_file_path.endswith("-2023-11-details.xlsx"):
+                sheet = "Sheet1"
+            else:
+                sheet = "Kitaliste"
+
             skiprows = 5
             names = ["district_id", "district_name", "id", "name", "street", "zip_code", "phone_number", "places",
                      "type", "sponsor_id", "sponsor_name", "sponsor_type"]
@@ -143,10 +147,8 @@ def convert_file_to_csv(source_file_path, clean=False, quiet=False):
                 .assign(street=lambda df: df["street"].apply(lambda row: re.sub(r"\(.*?\)", "", row))) \
                 .assign(street=lambda df: df["street"].apply(lambda row: re.sub(r"-\d+", "", row))) \
                 .assign(sponsor_name=lambda df: df["sponsor_name"].apply(lambda row: row.replace('"', ''))) \
-                .assign(phone_number=lambda df: df["phone_number"]
-                        .apply(lambda
-                                   row: f"+4930{row.replace(' ', '').replace('/', '').replace('-', '').lstrip('‭').rstrip('‬').lstrip('030').lstrip('(030)')}" if len(
-                row.replace("-", "")) > 0 else ""))
+                .assign(phone_number=lambda df: df["phone_number"].apply(
+                lambda row: f"+4930{build_phone_number(row)}" if len(build_phone_number(row)) > 0 else ""))
 
             # Write csv file
             if dataframe.shape[0] > 0:
@@ -161,3 +163,7 @@ def convert_file_to_csv(source_file_path, clean=False, quiet=False):
             print(f"✗️ Exception: {str(e)}")
     elif not quiet:
         print(f"✓ Already exists {os.path.basename(file_path_csv)}")
+
+
+def build_phone_number(row):
+    return f"{row.replace(' ', '').replace('/', '').replace('-', '').lstrip('‭').rstrip('‬').lstrip('030').lstrip('(030)').replace('------', '')}"

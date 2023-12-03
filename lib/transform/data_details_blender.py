@@ -8,7 +8,9 @@ from lib.tracking_decorator import TrackingDecorator
 key_figure_group = "berlin-lor-daycare-centers"
 
 statistics = [
-    f"{key_figure_group}-2023-10"
+    f"{key_figure_group}-2023-10",
+    f"{key_figure_group}-2023-11",
+    f"{key_figure_group}-2023-12"
 ]
 
 
@@ -52,7 +54,7 @@ def blend_details_into_geojson(source_file_path, clean, quiet):
                     "street": detail["street"],
                     "zip-code": detail["zip_code"],
                     "city": detail["city"],
-                    "phone-number": detail["phone_number"] if detail["phone_number"] is not None else "",
+                    "phone-number": detail["phone_number"],
                     "places": int(detail["places"]),
                     "sponsor-id": detail["sponsor_id"],
                     "sponsor-name": detail["sponsor_name"],
@@ -76,7 +78,7 @@ def blend_details_into_geojson(source_file_path, clean, quiet):
 def read_csv_file(file_path):
     if os.path.exists(file_path):
         with open(file_path, "r") as csv_file:
-            return pd.read_csv(csv_file, dtype={"id": "str"}, header=0, index_col=False)
+            return pd.read_csv(csv_file, dtype={"id": "str", "phone_number": "str"}, header=0, index_col=False).fillna("")
     else:
         return None
 

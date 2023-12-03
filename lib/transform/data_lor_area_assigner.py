@@ -85,8 +85,9 @@ def build_planning_area_id(lat, lon, geojson, lor_area_cache, lor_area_cache_fil
                 "planning_area_id": planning_area_id
             }
             lor_area_cache.to_csv(lor_area_cache_file_path, index=True)
-
-    return None
+            return planning_area_id
+        else:
+            return 0
 
 
 def build_polygon(coordinates) -> Polygon:
