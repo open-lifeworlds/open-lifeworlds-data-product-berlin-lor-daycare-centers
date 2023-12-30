@@ -9,7 +9,7 @@ metadata:
       - places: number of places in daycare centers
 description: This data products provides Berlin daycare center data on different LOR hierarchy levels
 input_ports:
-  - id: berlin-lor-geodata
+  - id: berlin-lor-geodata-geojson
     metadata:
       name: Berlin LOR geodata
       author: Open Lifeworlds

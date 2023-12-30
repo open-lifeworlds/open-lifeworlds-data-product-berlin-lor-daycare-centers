@@ -44,13 +44,13 @@ def blend_data(source_path, results_path, clean=False, quiet=False):
             # Load geojson
             if lor_area_type == "districts":
                 geojson = read_geojson_file(
-                    os.path.join(source_path, "berlin-lor-geodata", f"berlin-lor-{lor_area_type}.geojson"))
+                    os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-{lor_area_type}.geojson"))
             elif int(year) <= 2020:
                 geojson = read_geojson_file(
-                    os.path.join(source_path, "berlin-lor-geodata", f"berlin-lor-{lor_area_type}-until-2020.geojson"))
+                    os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-{lor_area_type}-until-2020.geojson"))
             elif int(year) >= 2021:
                 geojson = read_geojson_file(
-                    os.path.join(source_path, "berlin-lor-geodata", f"berlin-lor-{lor_area_type}-from-2021.geojson"))
+                    os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-{lor_area_type}-from-2021.geojson"))
             else:
                 geojson = None
 

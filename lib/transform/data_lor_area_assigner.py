@@ -12,7 +12,7 @@ from lib.tracking_decorator import TrackingDecorator
 def assign_lor_area(source_path, results_path, data_path, clean=False, quiet=False):
     # Load geojson
     geojson = read_geojson_file(
-        os.path.join(source_path, "berlin-lor-geodata", f"berlin-lor-planning-areas-from-2021.geojson"))
+        os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-planning-areas-from-2021.geojson"))
 
     # Iterate over files
     for subdir, dirs, files in sorted(os.walk(source_path)):
