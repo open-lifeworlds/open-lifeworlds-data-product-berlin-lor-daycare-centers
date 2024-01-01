@@ -21,11 +21,15 @@ def assign_lor_area(source_path, results_path, data_path, clean=False, quiet=Fal
         subdir = subdir.replace(f"{source_path}/", "")
         os.makedirs(os.path.join(results_path, subdir), exist_ok=True)
 
+        # Make data path
+        os.makedirs(data_path, exist_ok=True)
+
         for file_name in [file_name for file_name in sorted(files) if file_name.endswith("-details.csv")]:
             source_file_path = os.path.join(source_path, subdir, file_name)
             planning_area_cache_file_path = os.path.join(data_path, "lor-area-cache.csv")
 
-            assign_lor_area_id(source_file_path, planning_area_cache_file_path, geojson=geojson, clean=clean, quiet=quiet)
+            assign_lor_area_id(source_file_path, planning_area_cache_file_path, geojson=geojson, clean=clean,
+                               quiet=quiet)
 
 
 def assign_lor_area_id(source_file_path, planning_area_cache_file_path, geojson, clean, quiet):
@@ -41,27 +45,21 @@ def assign_lor_area_id(source_file_path, planning_area_cache_file_path, geojson,
             lor_area_cache = pd.DataFrame(columns=["latlon", "planning_area_id"])
             lor_area_cache.set_index("latlon", inplace=True)
 
-
         dataframe = dataframe.assign(
             planning_area_id=lambda df: df.apply(lambda row: build_planning_area_id(
                 row["lat"], row["lon"], geojson, lor_area_cache, planning_area_cache_file_path), axis=1))
         dataframe_errors = dataframe["planning_area_id"].isnull().sum()
 
         # Write csv file
-        if dataframe.shape[0] > 0:
-            dataframe.to_csv(source_file_path, index=False)
+        dataframe.assign(planning_area_id=lambda df: df["planning_area_id"].astype(int).astype(str).str.zfill(8))
+        dataframe.to_csv(source_file_path, index=False)
         if not quiet:
             print(f"✓ Assign LOR area IDs to {os.path.basename(source_file_path)} with {dataframe_errors} errors")
-        else:
-            if not quiet:
-                print(dataframe.head())
-                print(f"✗️ Empty {os.path.basename(source_file_path)}")
     else:
         print(f"✓ Already assigned LOR area IDs to {os.path.basename(source_file_path)}")
 
 
 def build_planning_area_id(lat, lon, geojson, lor_area_cache, lor_area_cache_file_path):
-
     planning_area_cache_index = f"{lat}_{lon}"
 
     # Check if planning area is already in cache
@@ -84,6 +82,8 @@ def build_planning_area_id(lat, lon, geojson, lor_area_cache, lor_area_cache_fil
             lor_area_cache.loc[planning_area_cache_index] = {
                 "planning_area_id": planning_area_id
             }
+            lor_area_cache.assign(
+                planning_area_id=lambda df: df["planning_area_id"].astype(int).astype(str).str.zfill(8))
             lor_area_cache.to_csv(lor_area_cache_file_path, index=True)
             return planning_area_id
         else:
@@ -98,7 +98,7 @@ def build_polygon(coordinates) -> Polygon:
 def read_csv_file(file_path):
     if os.path.exists(file_path):
         with open(file_path, "r") as csv_file:
-            return pd.read_csv(csv_file, dtype={"id": "str"})
+            return pd.read_csv(csv_file, dtype={"planning_area_id": "str"})
     else:
         return None
 
