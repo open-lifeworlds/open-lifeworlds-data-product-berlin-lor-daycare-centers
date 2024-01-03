@@ -47,10 +47,12 @@ def blend_data(source_path, results_path, clean=False, quiet=False):
                     os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-{lor_area_type}.geojson"))
             elif int(year) <= 2020:
                 geojson = read_geojson_file(
-                    os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-{lor_area_type}-until-2020.geojson"))
+                    os.path.join(source_path, "berlin-lor-geodata-geojson",
+                                 f"berlin-lor-{lor_area_type}-until-2020.geojson"))
             elif int(year) >= 2021:
                 geojson = read_geojson_file(
-                    os.path.join(source_path, "berlin-lor-geodata-geojson", f"berlin-lor-{lor_area_type}-from-2021.geojson"))
+                    os.path.join(source_path, "berlin-lor-geodata-geojson",
+                                 f"berlin-lor-{lor_area_type}-from-2021.geojson"))
             else:
                 geojson = None
 
@@ -165,17 +167,24 @@ def calculate_averages(year, half_year, year_population, geojson, csv_statistics
 
     values = {}
 
-    values |= {property_name: int(sum(csv_statistics[property_name])) for property_name in statistic_properties if
-               property_name in csv_statistics}
+    values_sums = {property_name: int(sum(csv_statistics[property_name])) for property_name in statistic_properties if
+                   property_name in csv_statistics}
+    values_averages = {}
+
     if total_sqkm is not None:
-        values |= {f"{property_name}_per_sqkm": round(float(total / total_sqkm), 2) for property_name, total in
-                   values.items()}
+        values_averages |= {f"{property_name}_per_sqkm": round(float(total / total_sqkm), 2) for property_name, total in
+                            values_sums.items()}
     if total_inhabitants is not None:
-        values |= {f"{property_name}_per_inhabitant": round(float(total / total_inhabitants), 2) for
-                   property_name, total in values.items()}
+        values_averages |= {
+            f"{property_name}_per_100k_inhabitant": round(float(total / (total_inhabitants / 100_000)), 2)
+            for property_name, total in values_sums.items()}
     if total_inhabitants_age_below_6 is not None:
-        values |= {f"{property_name}_per_inhabitant_age_below_6": round(float(total / total_inhabitants_age_below_6), 2) for
-                   property_name, total in values.items()}
+        values_averages |= {
+            f"{property_name}_per_inhabitant_age_below_6": round(float(total / total_inhabitants_age_below_6), 2)
+            for property_name, total in values_sums.items()}
+
+    values |= values_sums
+    values |= values_averages
 
     json_statistics[year][half_year][0] = values
 
