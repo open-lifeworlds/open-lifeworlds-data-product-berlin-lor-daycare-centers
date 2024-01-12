@@ -2,11 +2,11 @@
 id: berlin-lor-daycare-centers
 name: Berlin LOR Day Care Centers
 metadata:
-  - ownership: Open Lifeworlds
-  - domain: geodata
-  - schema:
-      - daycare_centers: number of daycare centers
-      - places: number of places in daycare centers
+  ownership: Open Lifeworlds
+  domain: geodata
+  schema:
+    - daycare_centers: number of daycare centers
+    - places: number of places in daycare centers
 description: This data products provides Berlin daycare center data on different LOR hierarchy levels
 input_ports:
   - id: berlin-lor-geodata-geojson
