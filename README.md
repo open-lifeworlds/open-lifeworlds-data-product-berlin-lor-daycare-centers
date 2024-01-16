@@ -6,10 +6,10 @@
     <img src="logo_with_text.png" alt="Logo" height="80">
   </a>
 
-  <h1 align="center">Open Lifeworlds Data Product - Berlin LOR daycare centers</h1>
+  <h1 align="center">Open Lifeworlds Data Product - Berlin LOR Daycare Centers</h1>
 
   <p align="center">
-    Data product providing Berlin LOR daycare centers data</a>
+    Consumer-aligned data product combining Berlin LOR daycare centers data and geodata</a>
   </p>
 </p>
 

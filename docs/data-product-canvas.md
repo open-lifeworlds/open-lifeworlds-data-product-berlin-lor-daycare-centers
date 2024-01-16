@@ -1,11 +1,12 @@
-# Data Product Canvas - Berlin LOR daycare centers
+# Data Product Canvas - Berlin LOR Daycare Centers
 
 ## Input Ports
 
 **Input ports define the format and protocol in which data can be read (database, file, API, visualizations)**
 
-This data product uses LOR geodata provided by [Open Lifeworlds](https://github.com/open-lifeworlds) available under the
-following URLs
+This data product uses LOR geodata provided by data
+product [open-lifeworlds-data-product-berlin-lor-geodata](https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-geodata)
+published under the following URLs
 
 * [berlin-lor-districts/berlin-lor-districts.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-geodata/main/data/berlin-lor-districts/berlin-lor-districts.geojson)
 * [berlin-lor-forecast-areas-until-2020/berlin-lor-forecast-areas-until-2020.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-geodata/main/data/berlin-lor-forecast-areas-until-2020/berlin-lor-forecast-areas-until-2020.geojson)
@@ -15,10 +16,15 @@ following URLs
 * [berlin-lor-planning-areas-until-2020/berlin-lor-planning-areas-until-2020.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-geodata/main/data/berlin-lor-planning-areas-until-2020/berlin-lor-planning-areas-until-2020.geojson)
 * [berlin-lor-planning-areas-from-2021/berlin-lor-planning-areas-from-2021.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-geodata/main/data/berlin-lor-planning-areas-from-2021/berlin-lor-planning-areas-from-2021.geojson)
 
-and detailed daycare center data provided by [Senatsverwaltung für Bildung, Jugend und Familie Berlin](https://www.berlin.de/sen/bildung/service/daten/) available under the following
-URLs
+and detailed daycare center data provided by data product [open-lifeworlds-data-product-berlin-lor-daycare-centers-source-aligned](https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers-source-aligned) published under the following URLs
 
-* [kitaliste_aktuell.xlsx](https://www.berlin.de/sen/jugend/traegerservice/kitaliste_aktuell.xlsx)
+* [berlin-lor-daycare-centers-2024-01-details.csv](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers-source-aligned/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-details.csv)
+
+and statistical population data provided by data
+product [open-lifeworlds-data-product-berlin-lor-population](https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-population)
+published under the following URLs
+
+* [berlin-lor-population-statistics/berlin-lor-population-statistics.json](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-population/main/data/berlin-lor-population-statistics/berlin-lor-population-statistics.json)
 
 ## Data Product Design
 
@@ -26,8 +32,6 @@ URLs
 **Ingestion, storage, transport, wrangling, cleaning, transformations, enrichment, augmentation, analytics, SQL
 statements, or used data platform services.**
 
-* [converts Excel data into csv](../lib/transform/data_csv_converter.py)
-* [geocodes location of daycare centers](../lib/transform/data_geocoder.py)
 * [assign LOR area to daycare center](../lib/transform/data_lor_area_assigner.py)
 * [aggregates daycare centers](../lib/transform/data_aggregator.py) on LOR area level
 * [blends statistical data into geojson](../lib/transform/data_blender.py) on different LOR area hierarchy levels
@@ -39,15 +43,10 @@ statements, or used data platform services.**
 
 The data of this data product is available under the following URLs
 
-* [berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10.csv](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10.csv)
-* [berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-details.csv](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-details.csv)
-
-Additionally, data blended into geojson is available under the following URLs
-
-* [berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-district-regions.geojson)
-* [berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-districts.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-districts.geojson)
-* [berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-forecast-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-forecast-areas.geojson)
-* [berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-planning-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2023-10/berlin-lor-daycare-centers-2023-10-planning-areas.geojson)
+* [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-district-regions.geojson)
+* [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-districts.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-districts.geojson)
+* [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-forecast-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-forecast-areas.geojson)
+* [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-planning-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-planning-areas.geojson)
 
 Additionally, statistics are available under the following URLs
 
@@ -99,9 +98,7 @@ Completeness of this data product is verified via [data_metrics.py](../lib/metri
 
 **Who is the consumer of the Data Product?**
 
-Consumers of this data product may include
-
-* projects that display statistical data based on LOR areas on maps or graphs
+Consumers of this data product may include  projects that display statistical data based on LOR areas on maps or graphs.
 
 ## Use Case
 

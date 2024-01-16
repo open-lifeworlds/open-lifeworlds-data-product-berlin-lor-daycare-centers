@@ -19,8 +19,8 @@ class FilesTestCase(unittest.TestCase):
     pass
 
 
-for year in [2023]:
-    for month in ["10"]:
+for year in [2024]:
+    for month in ["01"]:
         for lor_area_type in ["districts", "forecast-areas", "district-regions", "planning-areas"]:
             file = os.path.join(data_path, f"{key_figure_group}-{year}-{month}",
                                 f"{key_figure_group}-{year}-{month}-{lor_area_type}.geojson")
@@ -35,8 +35,8 @@ class PropertiesTestCase(unittest.TestCase):
     pass
 
 
-for year in [2023]:
-    for month in ["10"]:
+for year in [2024]:
+    for month in ["01"]:
         for lor_area_type in ["districts", "forecast-areas", "district-regions", "planning-areas"]:
             file = os.path.join(data_path, f"{key_figure_group}-{year}-{month}",
                                 f"{key_figure_group}-{year}-{month}-{lor_area_type}.geojson")
