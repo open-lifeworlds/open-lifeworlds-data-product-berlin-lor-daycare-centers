@@ -43,14 +43,30 @@ statements, or used data platform services.**
 
 The data of this data product is available under the following URLs
 
+* [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-details.geojson)
 * [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-district-regions.geojson)
 * [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-districts.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-districts.geojson)
 * [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-forecast-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-forecast-areas.geojson)
 * [berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-planning-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-01/berlin-lor-daycare-centers-2024-01-planning-areas.geojson)
+* [berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-details.geojson)
+* [berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-district-regions.geojson)
+* [berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-districts.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-districts.geojson)
+* [berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-forecast-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-forecast-areas.geojson)
+* [berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-planning-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-02/berlin-lor-daycare-centers-2024-02-planning-areas.geojson)
+* [berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-details.geojson)
+* [berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-district-regions.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-district-regions.geojson)
+* [berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-districts.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-districts.geojson)
+* [berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-forecast-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-forecast-areas.geojson)
+* [berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-planning-areas.geojson](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-2024-04/berlin-lor-daycare-centers-2024-04-planning-areas.geojson)
 
 Additionally, statistics are available under the following URLs
 
 * [berlin-lor-daycare-centers-statistics/berlin-lor-daycare-centers-statistics.json](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-statistics/berlin-lor-daycare-centers-statistics.json)
+
+Additionally, styles are available under the following URLs
+
+* [berlin-lor-daycare-centers-styles/berlin-lor-daycare-centers-symbol-theme-dark.json](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-styles/berlin-lor-daycare-centers-symbol-theme-dark.json)
+* [berlin-lor-daycare-centers-styles/berlin-lor-daycare-centers-symbol-theme-light.json](https://raw.githubusercontent.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/main/data/berlin-lor-daycare-centers-styles/berlin-lor-daycare-centers-symbol-theme-light.json)
 
 ## Metadata
 
