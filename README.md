@@ -3,46 +3,61 @@
 <br />
 <p align="center">
   <a href="https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers">
-    <img src="logo_with_text.png" alt="Logo" height="80">
+    <img src="logo-with-text.png" alt="Logo" style="height: 80px; ">
   </a>
 
-  <h1 align="center">Open Lifeworlds Data Product - Berlin LOR Daycare Centers</h1>
+  <h1 align="center">Berlin LOR Daycare Centers</h1>
 
   <p align="center">
-    Consumer-aligned data product combining Berlin LOR daycare centers data and geodata</a>
+    Data product combining Berlin LOR daycare centers data and geodata
   </p>
 </p>
 
 ## About The Project
 
-See [data product canvas](docs/data-product-canvas.md).
+See [data product canvas](./docs/data-product-canvas.md) and [ODPS canvas](./docs/odps-canvas.md).
 
 ### Built With
 
 * [Python](https://www.python.org/)
+* [uv](https://docs.astral.sh/uv/)
+* [ruff](https://docs.astral.sh/ruff/)
 
 ## Installation
 
-Install the following dependencies to fulfill the requirements for this project to run.
+Install uv, see https://github.com/astral-sh/uv?tab=readme-ov-file#installation.
 
-```shell script
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+```shell
+# On macOS and Linux.
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ## Usage
 
+Run this command to generate and activate a virtual environment.
+
+```shell
+uv venv
+source .venv/bin/activate
+```
+
+Run this command to re-install the Open Data Product Python library.
+
+```shell
+uv pip install --no-cache-dir git+https://github.com/open-lifeworlds/open-lifeworlds-python-lib.git
+```
+
 Run this command to start the main script.
 
-```shell script
-python main.py [OPTION]...
+```shell
+python3 main.py [OPTION]...
 
   -h, --help                           show this help
   -c, --clean                          clean intermediate results before start
   -q, --quiet                          do not log outputs
 
 Examples:
-  python main.py -c
+  python3 main.py -c
 ```
 
 ## Roadmap

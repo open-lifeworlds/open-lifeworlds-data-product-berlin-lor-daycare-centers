@@ -1,0 +1,269 @@
+---
+id: berlin-lor-daycare-centers
+metadata:
+  name: Berlin LOR Day Care Centers
+  owner: Open Lifeworlds
+  description: Data product providing Berlin daycare center data on different LOR hierarchy levels
+  url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers
+  license: CC-BY 4.0
+  updated: 2025-09-08
+  schema:
+    - name: daycare_centers
+      description: number of daycare centers
+    - name: places
+      description: number of places in daycare centers
+input_ports:
+  - id: berlin-lor-city
+    metadata:
+      name: Berlin Lor City
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-city
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-city/berlin-lor-city.geojson
+  - id: berlin-lor-district-regions-from-2021
+    metadata:
+      name: Berlin Lor District Regions From 2021
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-district-regions-from-2021
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-district-regions-from-2021/berlin-lor-district-regions-from-2021.geojson
+  - id: berlin-lor-district-regions-until-2020
+    metadata:
+      name: Berlin Lor District Regions Until 2020
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-district-regions-until-2020
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-district-regions-until-2020/berlin-lor-district-regions-until-2020.geojson
+  - id: berlin-lor-districts
+    metadata:
+      name: Berlin Lor Districts
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-districts
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-districts/berlin-lor-districts.geojson
+  - id: berlin-lor-forecast-areas-from-2021
+    metadata:
+      name: Berlin Lor Forecast Areas From 2021
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-forecast-areas-from-2021
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-forecast-areas-from-2021/berlin-lor-forecast-areas-from-2021.geojson
+  - id: berlin-lor-forecast-areas-until-2020
+    metadata:
+      name: Berlin Lor Forecast Areas Until 2020
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-forecast-areas-until-2020
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-forecast-areas-until-2020/berlin-lor-forecast-areas-until-2020.geojson
+  - id: berlin-lor-planning-areas-from-2021
+    metadata:
+      name: Berlin Lor Planning Areas From 2021
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-planning-areas-from-2021
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-planning-areas-from-2021/berlin-lor-planning-areas-from-2021.geojson
+  - id: berlin-lor-planning-areas-until-2020
+    metadata:
+      name: Berlin Lor Planning Areas Until 2020
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/02-silver/berlin-lor-planning-areas-until-2020
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/02-silver/berlin-lor-planning-areas-until-2020/berlin-lor-planning-areas-until-2020.geojson
+  - id: berlin-lor-matches
+    metadata:
+      name: Berlin Lor Matches
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-lor-geodata/tree/main/data/03-gold/berlin-lor-matches
+      license: CC-BY 4.0
+      updated: 2025-06-21
+      schema: []
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-lor-geodata/main/data/03-gold/berlin-lor-matches/berlin-lor-matches.json
+  - id: berlin-daycare-centers-2025-09
+    metadata:
+      name: Berlin Daycare Centers 2025 09
+      owner: Open Data Product
+      description:
+      url: https://github.com/open-data-product/open-data-product-berlin-daycare-centers-source-aligned/tree/main/data/03-gold/berlin-daycare-centers-2025-09
+      license:
+      updated: 2025-09-06
+      schema:
+    files:
+      - https://raw.githubusercontent.com/open-data-product/open-data-product-berlin-daycare-centers-source-aligned/main/data/03-gold/berlin-daycare-centers-2025-09/berlin-daycare-centers-2025-09.csv
+transformation_steps: []
+output_ports:
+  - id: berlin-lor-city
+    metadata:
+      name: Berlin Lor City
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-city
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-city/berlin-lor-city.geojson
+  - id: berlin-lor-district-regions-from-2021
+    metadata:
+      name: Berlin Lor District Regions From 2021
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-district-regions-from-2021
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-district-regions-from-2021/berlin-lor-district-regions-from-2021.geojson
+  - id: berlin-lor-district-regions-until-2020
+    metadata:
+      name: Berlin Lor District Regions Until 2020
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-district-regions-until-2020
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-district-regions-until-2020/berlin-lor-district-regions-until-2020.geojson
+  - id: berlin-lor-districts
+    metadata:
+      name: Berlin Lor Districts
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-districts
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-districts/berlin-lor-districts.geojson
+  - id: berlin-lor-forecast-areas-from-2021
+    metadata:
+      name: Berlin Lor Forecast Areas From 2021
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-forecast-areas-from-2021
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-forecast-areas-from-2021/berlin-lor-forecast-areas-from-2021.geojson
+  - id: berlin-lor-forecast-areas-until-2020
+    metadata:
+      name: Berlin Lor Forecast Areas Until 2020
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-forecast-areas-until-2020
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-forecast-areas-until-2020/berlin-lor-forecast-areas-until-2020.geojson
+  - id: berlin-lor-planning-areas-from-2021
+    metadata:
+      name: Berlin Lor Planning Areas From 2021
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-planning-areas-from-2021
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-planning-areas-from-2021/berlin-lor-planning-areas-from-2021.geojson
+  - id: berlin-lor-planning-areas-until-2020
+    metadata:
+      name: Berlin Lor Planning Areas Until 2020
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/02-silver/berlin-lor-planning-areas-until-2020
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/02-silver/berlin-lor-planning-areas-until-2020/berlin-lor-planning-areas-until-2020.geojson
+  - id: berlin-lor-daycare-centers-geojson
+    metadata:
+      name: Berlin Lor Daycare Centers Geojson
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-geojson
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-daycare-centers-2025-09.geojson
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-09-city.geojson
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-09-district-regions.geojson
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-09-districts.geojson
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-09-forecast-areas.geojson
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-09-planning-areas.geojson
+  - id: berlin-lor-daycare-centers-statistics
+    metadata:
+      name: Berlin Lor Daycare Centers Statistics
+      owner: Open Lifeworlds
+      description:
+      url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-statistics
+      license: CC-BY 4.0
+      updated: 2025-09-08
+      schema:
+    files:
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-statistics/berlin-lor-daycare-centers-statistics.json
+observability:
+  quality:
+    - name: geojson_property_completeness
+      description: The percentage of geojson features that have all necessary properties
+      files:
+        - name: berlin-lor-daycare-centers-2025-09-city.geojson
+          value: 100
+        - name: berlin-lor-daycare-centers-2025-09-districts.geojson
+          value: 100
+        - name: berlin-lor-daycare-centers-2025-09-forecast-areas.geojson
+          value: 100
+        - name: berlin-lor-daycare-centers-2025-09-district-regions.geojson
+          value: 100
+        - name: berlin-lor-daycare-centers-2025-09-planning-areas.geojson
+          value: 96
+  operational:
+  slas:
+  security:
+consumers:
+use_cases:
+classification: consumer-aligned
+ubiquitous_language: []
+tags:
+  - berlin
+  - lor
+  - geodata
+  - daycare

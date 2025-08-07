@@ -8,5 +8,14 @@
 **/__pycache__/
 **/*.zip
 
-/raw
-/workspace
+/data/01-bronze/
+/data/02-silver/**/*.xlsx
+
+/data/02-silver/berlin-lor-city/
+/data/02-silver/berlin-lor-district-regions-from-2021/
+/data/02-silver/berlin-lor-district-regions-until-2020/
+/data/02-silver/berlin-lor-districts/
+/data/02-silver/berlin-lor-forecast-areas-from-2021/
+/data/02-silver/berlin-lor-forecast-areas-until-2020/
+/data/02-silver/berlin-lor-planning-areas-from-2021/
+/data/02-silver/berlin-lor-planning-areas-until-2020/

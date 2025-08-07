@@ -1,0 +1,30 @@
+---
+attribute_groups:
+  all: &all
+    - name: daycare_centers
+    - name: places
+input_port_groups:
+  - id: berlin-lor-daycare-centers
+    input_ports:
+      - id: berlin-daycare-centers-2025-09
+        files:
+        - geojson_template_file_name: berlin-lor-city/berlin-lor-city.geojson
+          target_file_name: berlin-lor-daycare-centers-2025-09-city.geojson
+          source_files:
+            - { source_file_name: berlin-daycare-centers-2025-09-city.csv, attributes: *all }
+        - geojson_template_file_name: berlin-lor-districts/berlin-lor-districts.geojson
+          target_file_name: berlin-lor-daycare-centers-2025-09-districts.geojson
+          source_files:
+            - { source_file_name: berlin-daycare-centers-2025-09-districts.csv, attributes: *all }
+        - geojson_template_file_name: berlin-lor-forecast-areas-from-2021/berlin-lor-forecast-areas-from-2021.geojson
+          target_file_name: berlin-lor-daycare-centers-2025-09-forecast-areas.geojson
+          source_files:
+            - { source_file_name: berlin-daycare-centers-2025-09-forecast-areas.csv, attributes: *all }
+        - geojson_template_file_name: berlin-lor-district-regions-from-2021/berlin-lor-district-regions-from-2021.geojson
+          target_file_name: berlin-lor-daycare-centers-2025-09-district-regions.geojson
+          source_files:
+            - { source_file_name: berlin-daycare-centers-2025-09-district-regions.csv, attributes: *all }
+        - geojson_template_file_name: berlin-lor-planning-areas-from-2021/berlin-lor-planning-areas-from-2021.geojson
+          target_file_name: berlin-lor-daycare-centers-2025-09-planning-areas.geojson
+          source_files:
+            - { source_file_name: berlin-daycare-centers-2025-09-planning-areas.csv, attributes: *all }
