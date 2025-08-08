@@ -1,2 +1,2 @@
-id,daycare_centers,places,inhabitants,inhabitants_age_below_6
-0,2859,197789,3897145,208938
+id,daycare_centers,places,inhabitants,_100k_inhabitants,inhabitants_age_below_6
+0,2859,197789,3897145,38.97145,208938

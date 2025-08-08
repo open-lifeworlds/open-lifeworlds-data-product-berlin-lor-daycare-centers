@@ -32,6 +32,14 @@ def assign_population(
                         quiet=quiet,
                     )
 
+                    assign_100k_inhabitants(
+                        source_file_path=source_file_path,
+                        results_file_path=results_file_path,
+                        population_file_path=population_file_path,
+                        clean=clean,
+                        quiet=quiet,
+                    )
+
                     assign_inhabitants_age_below_6(
                         source_file_path=source_file_path,
                         results_file_path=results_file_path,
@@ -72,6 +80,43 @@ def assign_inhabitants(
 
         not quiet and print(
             f"✓ Assign inhabitants to {os.path.basename(source_file_path)} with {dataframe_errors} errors"
+        )
+
+
+def assign_100k_inhabitants(
+    source_file_path,
+    results_file_path,
+    population_file_path,
+    clean,
+    quiet,
+):
+    dataframe = read_csv_file(source_file_path)
+    population_dataframe = read_csv_file(population_file_path)
+
+    dataframe_errors = 0
+
+    if "_100k_inhabitants" not in dataframe.columns or clean:
+        dataframe = dataframe.assign(
+            _100k_inhabitants=lambda df: df.apply(
+                lambda row: int(
+                    population_dataframe[
+                        population_dataframe["id"].astype(str).str.zfill(len(row["id"]))
+                        == str(row["id"])
+                    ].iloc[0]["inhabitants"]
+                )
+                / 100_000,
+                axis=1,
+            )
+        )
+
+        dataframe_errors += dataframe["_100k_inhabitants"].isnull().sum()
+
+        # Write csv file
+        os.makedirs(os.path.dirname(results_file_path), exist_ok=True)
+        dataframe.to_csv(results_file_path, index=False)
+
+        not quiet and print(
+            f"✓ Assign 100k inhabitants to {os.path.basename(source_file_path)} with {dataframe_errors} errors"
         )
 
 
