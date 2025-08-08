@@ -47,9 +47,6 @@ def assign_lor_area_id(
     clean,
     quiet,
 ):
-    # Make results path
-    os.makedirs(os.path.dirname(results_file_path), exist_ok=True)
-
     dataframe = read_csv_file(source_file_path)
 
     if "planning_area_id" not in dataframe.columns:
@@ -80,6 +77,7 @@ def assign_lor_area_id(
         dataframe_errors = dataframe["planning_area_id"].isnull().sum()
 
         # Write csv file
+        os.makedirs(os.path.dirname(results_file_path), exist_ok=True)
         dataframe.assign(
             planning_area_id=lambda df: df["planning_area_id"]
             .astype(int)

@@ -21,9 +21,10 @@ from openlifeworlds.metrics.data_metrics_generator import (
 from openlifeworlds.transform.data_blender import blend_data
 
 from lib.transform.data_aggregator import aggregate_data
-from lib.transform.data_copier import copy_geodata
+from lib.transform.data_copier import copy_geodata, copy_population_data
 from lib.transform.data_details_blender import blend_data_details
 from lib.transform.data_lor_area_assigner import assign_lor_area
+from lib.transform.data_population_assigner import assign_population
 
 file_path = os.path.realpath(__file__)
 script_path = os.path.dirname(file_path)
@@ -65,6 +66,13 @@ def main(clean, quiet):
         quiet=quiet,
     )
 
+    copy_population_data(
+        source_path=bronze_path,
+        results_path=silver_path,
+        clean=clean,
+        quiet=quiet,
+    )
+
     assign_lor_area(
         source_path=bronze_path,
         results_path=silver_path,
@@ -79,6 +87,14 @@ def main(clean, quiet):
 
     aggregate_data(
         source_path=silver_path, results_path=silver_path, clean=clean, quiet=quiet
+    )
+
+    assign_population(
+        data_transformation=data_transformation,
+        source_path=silver_path,
+        results_path=silver_path,
+        clean=clean,
+        quiet=quiet,
     )
 
     blend_data(
