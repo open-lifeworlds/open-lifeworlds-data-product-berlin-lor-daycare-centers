@@ -131,7 +131,7 @@ def main(clean, quiet):
     update_data_product_manifest(
         data_product_manifest=data_product_manifest,
         config_path=script_path,
-        data_paths=[silver_path, gold_path],
+        data_paths=[gold_path],
         file_endings=(".geojson", ".json"),
         git_lfs=True,
     )
