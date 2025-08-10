@@ -1,13 +1,18 @@
 import os
 
 import pandas as pd
+from openlifeworlds.config.data_transformation_loader import DataTransformation
 
 from lib.tracking_decorator import TrackingDecorator
 
 
 @TrackingDecorator.track_time
 def assign_population(
-    data_transformation, source_path, results_path, clean=False, quiet=False
+    data_transformation: DataTransformation,
+    source_path,
+    results_path,
+    clean=False,
+    quiet=False,
 ):
     for input_port_group in data_transformation.input_port_groups or []:
         for input_port in input_port_group.input_ports or []:

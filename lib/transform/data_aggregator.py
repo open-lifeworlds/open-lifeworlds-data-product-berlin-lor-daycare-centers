@@ -106,6 +106,9 @@ def aggregate_csv_file(
     if not os.path.exists(results_file_path):
         dataframe_details = read_csv_file(source_file_path)
 
+        # Remove invalid values
+        dataframe_details.dropna(subset=["planning_area_id"], inplace=True)
+
         dataframe_details["city_id"] = 0
         dataframe_details["district_id"] = (
             dataframe_details["planning_area_id"].astype(str).str.zfill(8).str[:2]
@@ -129,7 +132,6 @@ def aggregate_csv_file(
             .reset_index()
             .sort_values(by=aggregation_attribute)
             .rename(columns={aggregation_attribute: "id"})
-            # .assign(id=lambda df: df["id"].astype(int).astype(str).str.zfill(digits))
         )
 
         # Write csv file
@@ -144,7 +146,7 @@ def aggregate_csv_file(
 def read_csv_file(file_path):
     if os.path.exists(file_path):
         with open(file_path, "r") as csv_file:
-            return pd.read_csv(csv_file, dtype={"id": "str"})
+            return pd.read_csv(csv_file, dtype=str)
     else:
         return None
 

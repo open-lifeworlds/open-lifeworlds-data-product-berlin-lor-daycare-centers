@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "click>=8.2.1",
     "open-lifeworlds-python-lib",
+    "rich>=14.1.0",
     "shapely>=2.1.1",
 ]
 

@@ -4,7 +4,7 @@ import re
 import pandas as pd
 from shapely.geometry.point import Point
 from shapely.geometry.polygon import Polygon
-
+from rich.progress import track
 from lib.tracking_decorator import TrackingDecorator
 
 
@@ -16,9 +16,16 @@ def assign_lor_area(source_path, results_path, geojson_path, clean=False, quiet=
     # Iterate over files
     for subdir, dirs, files in sorted(os.walk(source_path)):
         if bool(re.search(r"berlin-daycare-centers-\d{4}-\d{2}$", subdir)):
-            for file_name in [
-                file_name for file_name in sorted(files) if file_name.endswith(".csv")
-            ]:
+            for file_name in track(
+                sequence=[
+                    file_name
+                    for file_name in sorted(files)
+                    if file_name.endswith(".csv")
+                ],
+                description="Assigning LOR area IDs",
+                total=len(files),
+                transient=True,
+            ):
                 source_file_path = os.path.join(
                     source_path, subdir.split(os.sep)[-1], file_name
                 )
@@ -58,32 +65,28 @@ def assign_lor_area_id(
             lor_area_cache = pd.DataFrame(columns=["planning_area_id", "latlon"])
             lor_area_cache.set_index("latlon", inplace=True)
 
-        dataframe["lat"] = dataframe["lat"].apply(str).str[:10]
-        dataframe["lon"] = dataframe["lon"].apply(str).str[:10]
+        dataframe["lat"] = dataframe["lat"].apply(str).str[:8]
+        dataframe["lon"] = dataframe["lon"].apply(str).str[:8]
 
-        dataframe = dataframe.assign(
-            planning_area_id=lambda df: df.apply(
-                lambda row: build_planning_area_id(
-                    row["lat"],
-                    row["lon"],
-                    geojson,
-                    lor_area_cache,
-                    planning_area_cache_file_path,
-                ),
-                axis=1,
+        for index, row in track(
+            sequence=dataframe.iterrows(),
+            description=f"Assigning LOR area IDs to {os.path.basename(source_file_path).replace(".csv", "")}",
+            total=len(dataframe),
+            transient=True,
+        ):
+            planning_area_id = build_planning_area_id(
+                row["lat"],
+                row["lon"],
+                geojson,
+                lor_area_cache,
+                planning_area_cache_file_path,
             )
-        )
+            dataframe.at[index, "planning_area_id"] = planning_area_id
 
         dataframe_errors = dataframe["planning_area_id"].isnull().sum()
 
         # Write csv file
         os.makedirs(os.path.dirname(results_file_path), exist_ok=True)
-        dataframe.assign(
-            planning_area_id=lambda df: df["planning_area_id"]
-            .astype(int)
-            .astype(str)
-            .str.zfill(8)
-        )
         dataframe.to_csv(results_file_path, index=False)
 
         not quiet and print(
@@ -128,9 +131,9 @@ def build_planning_area_id(lat, lon, geojson, lor_area_cache, lor_area_cache_fil
             # Persist LOR area cache
             lor_area_cache.to_csv(lor_area_cache_file_path, index=True)
 
-            return planning_area_id
+            return planning_area_id.zfill(8)
         else:
-            return 0
+            return None
 
 
 def build_polygon(coordinates) -> Polygon:
