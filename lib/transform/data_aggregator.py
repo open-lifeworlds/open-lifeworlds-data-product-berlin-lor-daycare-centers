@@ -123,6 +123,9 @@ def aggregate_csv_file(
             dataframe_details["planning_area_id"].astype(str).str.zfill(8).str[:8]
         )
 
+        # Convert places to numeric before building a sum
+        dataframe_details['places'] = pd.to_numeric(dataframe_details['places'], errors="coerce")
+
         dataframe = (
             dataframe_details.groupby(aggregation_attribute)
             .agg(

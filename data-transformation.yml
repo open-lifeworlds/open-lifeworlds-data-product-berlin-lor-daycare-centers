@@ -3,9 +3,11 @@ attribute_groups:
   all: &all
     - name: daycare_centers
     - name: places
+    - { name: daycare_centers_per_sqkm, numerator: daycare_centers, denominator_area_sqkm: True }
     - { name: daycare_centers_per_inhabitant, numerator: daycare_centers, denominator: inhabitants }
     - { name: daycare_centers_per_100k_inhabitant, numerator: daycare_centers, denominator: _100k_inhabitants }
     - { name: daycare_centers_per_inhabitants_age_below_6, numerator: daycare_centers, denominator: inhabitants_age_below_6 }
+    - { name: places_per_sqkm, numerator: places, denominator_area_sqkm: True }
     - { name: places_per_inhabitant, numerator: places, denominator: inhabitants }
     - { name: places_per_100k_inhabitant, numerator: places, denominator: _100k_inhabitants }
     - { name: places_per_inhabitants_age_below_6, numerator: places, denominator: inhabitants_age_below_6 }

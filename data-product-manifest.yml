@@ -6,7 +6,7 @@ metadata:
   description: Data product providing Berlin daycare center data on different LOR hierarchy levels
   url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers
   license: CC-BY 4.0
-  updated: 2025-09-09
+  updated: 2025-10-04
   schema:
     - name: daycare_centers
       description: number of daycare centers
@@ -162,7 +162,7 @@ output_ports:
       description:
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-details-geojson
       license: CC-BY 4.0
-      updated: 2025-09-09
+      updated: 2025-10-04
       schema:
     files:
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-details-geojson/berlin-daycare-centers-2025-09.geojson
@@ -173,7 +173,7 @@ output_ports:
       description:
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-geojson
       license: CC-BY 4.0
-      updated: 2025-09-09
+      updated: 2025-10-04
       schema:
     files:
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-09-city.geojson
@@ -188,7 +188,7 @@ output_ports:
       description:
       url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-statistics
       license: CC-BY 4.0
-      updated: 2025-09-09
+      updated: 2025-10-04
       schema:
     files:
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-statistics/berlin-lor-daycare-centers-statistics.json

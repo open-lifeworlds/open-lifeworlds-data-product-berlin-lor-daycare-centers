@@ -7,7 +7,7 @@
 * description: Data product providing Berlin daycare center data on different LOR hierarchy levels
 * url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers
 * license: CC-BY 4.0
-* updated: 2025-09-09
+* updated: 2025-10-04
 
 ## Input Ports
 
@@ -157,7 +157,7 @@
 * owner: Open Lifeworlds
 * url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-details-geojson
 * license: CC-BY 4.0
-* updated: 2025-09-09
+* updated: 2025-10-04
 
 **Files**
 
@@ -168,7 +168,7 @@
 * owner: Open Lifeworlds
 * url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-geojson
 * license: CC-BY 4.0
-* updated: 2025-09-09
+* updated: 2025-10-04
 
 **Files**
 
@@ -183,7 +183,7 @@
 * owner: Open Lifeworlds
 * url: https://github.com/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/tree/main/data/03-gold/berlin-lor-daycare-centers-statistics
 * license: CC-BY 4.0
-* updated: 2025-09-09
+* updated: 2025-10-04
 
 **Files**
 
