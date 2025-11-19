@@ -17,6 +17,7 @@ from openlifeworlds.config.data_product_manifest_loader import (
     load_data_product_manifest,
 )
 from openlifeworlds.config.data_transformation_loader import load_data_transformation
+from openlifeworlds.config.dpds_loader import load_dpds
 from openlifeworlds.config.odps_loader import load_odps
 from openlifeworlds.document.data_product_canvas_generator import (
     generate_data_product_canvas,
@@ -24,18 +25,18 @@ from openlifeworlds.document.data_product_canvas_generator import (
 from openlifeworlds.document.data_product_manifest_updater import (
     update_data_product_manifest,
 )
+from openlifeworlds.document.dpds_canvas_generator import generate_dpds_canvas
+from openlifeworlds.document.dpds_updater import update_dpds
+from openlifeworlds.document.jupyter_notebook_creator import (
+    create_jupyter_notebook_for_geojson,
+)
 from openlifeworlds.document.odps_canvas_generator import generate_odps_canvas
+from openlifeworlds.document.odps_updater import update_odps
 from openlifeworlds.extract.data_extractor import extract_data
 from openlifeworlds.metrics.data_metrics_generator import (
     generate_geojson_property_completeness_metrics,
 )
 from openlifeworlds.transform.data_blender import blend_data
-
-from lib.transform.data_aggregator import aggregate_data
-from lib.transform.data_copier import copy_geodata, copy_population_data
-from lib.transform.data_details_blender import blend_data_details
-from lib.transform.data_lor_area_assigner import assign_lor_area
-from lib.transform.data_population_assigner import assign_population
 
 file_path = os.path.realpath(__file__)
 script_path = os.path.dirname(file_path)
@@ -54,6 +55,7 @@ def main(clean, quiet):
     data_product_manifest = load_data_product_manifest(config_path=script_path)
     data_transformation = load_data_transformation(config_path=script_path)
     odps = load_odps(config_path=script_path)
+    dpds = load_dpds(config_path=script_path)
 
     #
     # Extract
@@ -70,55 +72,10 @@ def main(clean, quiet):
     # Transform
     #
 
-    copy_geodata(
-        source_path=bronze_path,
-        results_path=silver_path,
-        clean=clean,
-        quiet=quiet,
-    )
-
-    copy_population_data(
-        source_path=bronze_path,
-        results_path=silver_path,
-        clean=clean,
-        quiet=quiet,
-    )
-
-    assign_lor_area(
-        source_path=bronze_path,
-        results_path=silver_path,
-        geojson_path=os.path.join(
-            bronze_path,
-            "berlin-lor-planning-areas-from-2021",
-            "berlin-lor-planning-areas-from-2021.geojson",
-        ),
-        clean=clean,
-        quiet=quiet,
-    )
-
-    aggregate_data(
-        source_path=silver_path, results_path=silver_path, clean=clean, quiet=quiet
-    )
-
-    assign_population(
-        data_transformation=data_transformation,
-        source_path=silver_path,
-        results_path=silver_path,
-        clean=clean,
-        quiet=quiet,
-    )
-
     blend_data(
+        data_product_manifest=data_product_manifest,
         data_transformation=data_transformation,
-        source_path=silver_path,
-        results_path=gold_path,
-        clean=clean,
-        quiet=quiet,
-    )
-
-    blend_data_details(
-        data_transformation=data_transformation,
-        source_path=silver_path,
+        source_path=bronze_path,
         results_path=gold_path,
         clean=clean,
         quiet=quiet,
@@ -139,12 +96,32 @@ def main(clean, quiet):
     # Documentation
     #
 
+    create_jupyter_notebook_for_geojson(
+        data_product_manifest=data_product_manifest,
+        results_path=script_path,
+        data_path=gold_path,
+        clean=True,
+        quiet=quiet,
+    )
+
     update_data_product_manifest(
         data_product_manifest=data_product_manifest,
         config_path=script_path,
         data_paths=[gold_path],
         file_endings=(".geojson", ".json"),
-        git_lfs=True,
+    )
+
+    update_odps(
+        data_product_manifest=data_product_manifest,
+        odps=odps,
+        config_path=script_path,
+        output_file_formats=["geojson", ".json"],
+    )
+
+    update_dpds(
+        data_product_manifest=data_product_manifest,
+        dpds=dpds,
+        config_path=script_path,
     )
 
     generate_data_product_canvas(
@@ -154,6 +131,11 @@ def main(clean, quiet):
 
     generate_odps_canvas(
         odps=odps,
+        docs_path=docs_path,
+    )
+
+    generate_dpds_canvas(
+        dpds=dpds,
         docs_path=docs_path,
     )
 

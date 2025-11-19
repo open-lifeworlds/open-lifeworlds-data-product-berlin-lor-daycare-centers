@@ -1,0 +1,194 @@
+---
+dataProductDescriptor: data-product-descriptor
+info:
+  fullyQualifiedName: urn:dpds:openlifeworlds:dataproducts:berlin-lor-daycare-centers:1.0
+  name: Berlin LOR Day Care Centers
+  version: '1.0'
+  domain: domain
+  owner:
+    id: Open Lifeworlds
+    name: Open Lifeworlds
+  id: berlin-lor-daycare-centers
+  entityType:
+  displayName: Berlin LOR Day Care Centers
+  description: Data product providing Berlin daycare center data on different LOR hierarchy levels
+  contactPoints:
+interfaceComponents:
+  outputPorts:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-daycare-centers-geojson
+      fullyQualifiedName: berlin-lor-daycare-centers-geojson
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-daycare-centers-statistics
+      fullyQualifiedName: berlin-lor-daycare-centers-statistics
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+  inputPorts:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-city
+      fullyQualifiedName: berlin-lor-city
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-district-regions-from-2021
+      fullyQualifiedName: berlin-lor-district-regions-from-2021
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-district-regions-until-2020
+      fullyQualifiedName: berlin-lor-district-regions-until-2020
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-districts
+      fullyQualifiedName: berlin-lor-districts
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-forecast-areas-from-2021
+      fullyQualifiedName: berlin-lor-forecast-areas-from-2021
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-forecast-areas-until-2020
+      fullyQualifiedName: berlin-lor-forecast-areas-until-2020
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-planning-areas-from-2021
+      fullyQualifiedName: berlin-lor-planning-areas-from-2021
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-planning-areas-until-2020
+      fullyQualifiedName: berlin-lor-planning-areas-until-2020
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-matches
+      fullyQualifiedName: berlin-lor-matches
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-daycare-centers-2025-10-csv
+      fullyQualifiedName: berlin-daycare-centers-2025-10-csv
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+    - promises:
+      expectations:
+      obligations:
+      id: berlin-lor-population-2024-02-csv
+      fullyQualifiedName: berlin-lor-population-2024-02-csv
+      entityType:
+      name: ''
+      version:
+      displayName:
+      description:
+      componentGroup:
+      tags:
+      externalDocs:
+  discoveryPorts:
+  observabilityPorts:
+  controlPorts:
+internalComponents:
+components:
+tags:
+externalDocs:
