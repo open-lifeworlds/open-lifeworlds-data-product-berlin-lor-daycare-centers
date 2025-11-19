@@ -77,7 +77,7 @@ def main(clean, quiet):
         data_transformation=data_transformation,
         source_path=bronze_path,
         results_path=gold_path,
-        clean=clean,
+        clean=True,
         quiet=quiet,
     )
 

@@ -4,13 +4,13 @@ attribute_groups:
     - name: daycare_centers
     - name: places
     - { name: daycare_centers_per_sqkm, numerator: daycare_centers, denominator_area_sqkm: True }
-    - { name: daycare_centers_per_inhabitant, numerator: daycare_centers, denominator: inhabitants }
-    - { name: daycare_centers_per_100k_inhabitant, numerator: daycare_centers, denominator: _100k_inhabitants }
-    - { name: daycare_centers_per_inhabitant_age_below_6, numerator: daycare_centers, denominator: inhabitants_age_below_6 }
+    - { name: daycare_centers_per_inhabitant, numerator: daycare_centers, denominator_inhabitants: True }
+    - { name: daycare_centers_per_100k_inhabitant, numerator: daycare_centers, denominator_100k_inhabitants: True }
+    - { name: daycare_centers_per_inhabitant_age_below_6, numerator: daycare_centers, denominator_inhabitants_age_below_6: True }
     - { name: places_per_sqkm, numerator: places, denominator_area_sqkm: True }
-    - { name: places_per_inhabitant, numerator: places, denominator: inhabitants }
-    - { name: places_per_100k_inhabitant, numerator: places, denominator: _100k_inhabitants }
-    - { name: places_per_inhabitant_age_below_6, numerator: places, denominator: inhabitants_age_below_6 }
+    - { name: places_per_inhabitant, numerator: places, denominator_inhabitants: True }
+    - { name: places_per_100k_inhabitant, numerator: places, denominator_100k_inhabitants: True }
+    - { name: places_per_inhabitant_age_below_6, numerator: places, denominator_inhabitants_age_below_6: True }
 input_port_groups:
   - id: berlin-lor-daycare-centers
     input_ports:
@@ -18,26 +18,26 @@ input_port_groups:
         files:
         - geojson_template_file_name: berlin-lor-city/berlin-lor-city.geojson
           target_file_name: berlin-lor-daycare-centers-2025-10-city.geojson
-          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t1-city.csv
+          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t2-city.csv
           source_files:
             - { source_file_name: berlin-daycare-centers-2025-10-city.csv, attributes: *all }
         - geojson_template_file_name: berlin-lor-districts/berlin-lor-districts.geojson
           target_file_name: berlin-lor-daycare-centers-2025-10-districts.geojson
-          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t1-districts.csv
+          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t2-districts.csv
           source_files:
             - { source_file_name: berlin-daycare-centers-2025-10-districts.csv, attributes: *all }
         - geojson_template_file_name: berlin-lor-forecast-areas-from-2021/berlin-lor-forecast-areas-from-2021.geojson
           target_file_name: berlin-lor-daycare-centers-2025-10-forecast-areas.geojson
-          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t1-forecast-areas.csv
+          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t2-forecast-areas.csv
           source_files:
             - { source_file_name: berlin-daycare-centers-2025-10-forecast-areas.csv, attributes: *all }
         - geojson_template_file_name: berlin-lor-district-regions-from-2021/berlin-lor-district-regions-from-2021.geojson
           target_file_name: berlin-lor-daycare-centers-2025-10-district-regions.geojson
-          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t1-district-regions.csv
+          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t2-district-regions.csv
           source_files:
             - { source_file_name: berlin-daycare-centers-2025-10-district-regions.csv, attributes: *all }
         - geojson_template_file_name: berlin-lor-planning-areas-from-2021/berlin-lor-planning-areas-from-2021.geojson
           target_file_name: berlin-lor-daycare-centers-2025-10-planning-areas.geojson
-          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t1-planning-areas.csv
+          population_file_name: berlin-lor-population-2024-02-csv/berlin-lor-population-2024-02-t2-planning-areas.csv
           source_files:
             - { source_file_name: berlin-daycare-centers-2025-10-planning-areas.csv, attributes: *all }
