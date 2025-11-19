@@ -38,6 +38,8 @@ from openlifeworlds.metrics.data_metrics_generator import (
 )
 from openlifeworlds.transform.data_blender import blend_data
 
+from data_details_blender import blend_data_details
+
 file_path = os.path.realpath(__file__)
 script_path = os.path.dirname(file_path)
 
@@ -77,7 +79,15 @@ def main(clean, quiet):
         data_transformation=data_transformation,
         source_path=bronze_path,
         results_path=gold_path,
-        clean=True,
+        clean=clean,
+        quiet=quiet,
+    )
+
+    blend_data_details(
+        data_transformation=data_transformation,
+        source_path=bronze_path,
+        results_path=gold_path,
+        clean=clean,
         quiet=quiet,
     )
 

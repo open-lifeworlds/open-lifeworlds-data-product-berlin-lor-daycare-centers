@@ -182,6 +182,7 @@ output_ports:
       schema:
     files:
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-10-city.geojson
+      - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-10-details.geojson
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-10-district-regions.geojson
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-10-districts.geojson
       - https://media.githubusercontent.com/media/open-lifeworlds/open-lifeworlds-data-product-berlin-lor-daycare-centers/refs/heads/main/data/03-gold/berlin-lor-daycare-centers-geojson/berlin-lor-daycare-centers-2025-10-forecast-areas.geojson
